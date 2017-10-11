@@ -1,7 +1,7 @@
-BUILD_DATE := $(shell date -u +"%Y-%m-%dT%H:%M:%SZ")
-VCS_URL := $(shell [ -d .git ] && git config --get remote.origin.url)
-VCS_REF := $(strip $(shell [ -d .git ] && git rev-parse --short HEAD))
-IS_TAG := $(shell [ -d .git ] && git describe --exact-match HEAD)
+BUILD_DATE := $(shell date -u +"%Y-%m-%dT%H:%M:%S%Z")
+VCS_URL := $(shell git config --get remote.origin.url)
+VCS_REF := $(strip $(shell git rev-parse --short HEAD))
+IS_TAG := $(shell git describe --exact-match HEAD)
 VCS_REF_MSG := $(shell if [ "$(IS_TAG)" != "" ]; then git tag -l -n1 $(IS_TAG) | awk '{$$1 = ""; print $$0;}'; else git log --format='%s' -n 1 $(VCS_REF); fi)
 
 default:
