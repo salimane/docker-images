@@ -14,13 +14,14 @@ default:
 		--build-arg VCS_REF_MSG="$(VCS_REF_MSG)" \
 		--compress \
 		--rm \
-		-t salimane/statsd:v0.8.0 .
+		-t salimane/statsd .
 
 run:
-	docker run -t salimane/statsd:v0.8.0
+	docker run -t salimane/statsd
 
 int:
-	docker run -it salimane/statsd:v0.8.0
+	docker run -it salimane/statsd
 
 push:
-	docker push salimane/statsd:v0.8.0
+	docker tag salimane/statsd:latest salimane/statsd:v0.8.0
+	docker push salimane/statsd
