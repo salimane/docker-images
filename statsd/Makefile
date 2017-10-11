@@ -1,3 +1,4 @@
+VERSION := $(strip $(shell git describe --always --tags --dirty))
 BUILD_DATE := $(shell date -u +"%Y-%m-%dT%H:%M:%S%Z")
 VCS_URL := $(shell git config --get remote.origin.url)
 VCS_REF := $(strip $(shell git rev-parse --short HEAD))
@@ -7,7 +8,7 @@ VCS_REF_MSG := $(shell if [ "$(IS_TAG)" != "" ]; then git tag -l -n1 $(IS_TAG) |
 default:
 	docker build \
 	    --build-arg BUILD_DATE="$(BUILD_DATE)" \
-		--build-arg VERSION="$(BEAT_CLASSIFIER_API_VERSION)" \
+		--build-arg VERSION="$(VERSION)" \
 		--build-arg VCS_URL="$(VCS_URL)" \
 		--build-arg VCS_REF="$(VCS_REF)" \
 		--build-arg VCS_REF_MSG="$(VCS_REF_MSG)" \
