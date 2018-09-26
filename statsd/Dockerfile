@@ -12,6 +12,7 @@ RUN mkdir -p /src && \
 COPY config.js Dockerfile /etc/statsd/
 
 EXPOSE  8125/udp
+EXPOSE  8125/tcp
 CMD ["node", "/src/statsd/stats.js", "/etc/statsd/config.js"]
 
 ARG BUILD_DATE
