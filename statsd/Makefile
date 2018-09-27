@@ -23,5 +23,5 @@ int:
 	docker run -it salimane/statsd
 
 push:
-	docker tag salimane/statsd:latest salimane/statsd:v0.8.0
+	docker tag salimane/statsd:latest salimane/statsd:v0.8.1
 	docker push salimane/statsd

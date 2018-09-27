@@ -21,6 +21,8 @@ ENVironment variables:
 
 - GRAPHITE_HOST : the host of graphite (default: "localhost")
 - GRAPHITE_PORT : the port of graphite (default: 2003)
+- SERVER_PORT: the port of the statsd server, (default: "8125")
+- SERVER_PROTOCOL: the protocol of the statsd server, (default: "udp", available: "tcp")
 - FLUSH_INTERVAL : the interval (in ms) to flush metrics to the backend (default: 1000)
 - PERCENT_TRESHOLD : for time information, calculate the Nth percentile(s) (default [ '90' ])
 - DEBUG : execute statsd with debug enabled (default: "false")

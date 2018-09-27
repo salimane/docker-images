@@ -108,7 +108,8 @@ Optional Variables:
   graphitePort: parseInt(process.env.GRAPHITE_PORT) || 2003
 , graphiteHost: process.env.GRAPHITE_HOST || "localhost"
 , debug: (process.env.DEBUG || "false").toLowerCase() == "true"
-, port: 8125
+, server: "./servers/" + (process.env.SERVER_PROTOCOL || "udp")
+, port: parseInt(process.env.SERVER_PORT) || 8125
 , flushInteval: process.env.FLUSH_INTERVAL || "1000"
 , percentThreshold: [ process.env.PERCENT_TRESHOLD || "90" ]
 , backends: [ "./backends/graphite" ]
