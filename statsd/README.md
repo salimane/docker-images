@@ -4,7 +4,7 @@ A docker image for statsd [https://github.com/etsy/statsd](https://github.com/et
 
 ## Run statsd Container
 
-    docker run -e GRAPHITE_HOST=localhost -e GRAPHITE_PORT=2003 -p 8125:8125/udp --name statsd salimane/statsd:v0.8.0
+    docker run -e GRAPHITE_HOST=localhost -e GRAPHITE_PORT=2003 -p 8125:8125/udp --name statsd salimane/statsd:v0.8.1
 
 Test statsd:
 
@@ -24,7 +24,7 @@ ENVironment variables:
 - SERVER_PORT: the port of the statsd server, (default: "8125")
 - SERVER_PROTOCOL: the protocol of the statsd server, (default: "udp", available: "tcp")
 - FLUSH_INTERVAL : the interval (in ms) to flush metrics to the backend (default: 1000)
-- PERCENT_TRESHOLD : for time information, calculate the Nth percentile(s) (default [ '90' ])
+- PERCENT_THRESHOLD : for time information, calculate the Nth percentile(s) (default [ '90' ])
 - DEBUG : execute statsd with debug enabled (default: "false")
 - LOG_LEVEL: the log level used by statsd (default:  "LOG_INFO")
 
