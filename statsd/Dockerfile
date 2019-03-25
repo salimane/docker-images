@@ -1,7 +1,7 @@
 FROM node:6.11.4-alpine
 MAINTAINER Salimane Adjao Moustapha <me@salimane.com>
 
-ENV STATSD_VERSION 0.8.0
+ENV STATSD_VERSION 0.8.1
 
 ADD https://github.com/etsy/statsd/archive/v${STATSD_VERSION}.tar.gz /tmp/statsd.tar.gz
 RUN mkdir -p /src && \
@@ -33,8 +33,8 @@ LABEL version="$VERSION" \
       org.label-schema.distribution-scope="public" \
       org.label-schema.changelog-url="https://github.com/salimane/docker-images/releases" \
       org.label-schema.url="https://github.com/salimane/docker-images" \
-      org.label-schema.run="docker run -d -e ENV_NAME=ENV_VALUE -p 8125:8125/udp --name statsd salimane/statsd:v0.8.0" \
+      org.label-schema.run="docker run -d -e ENV_NAME=ENV_VALUE -p 8125:8125/udp --name statsd salimane/statsd:v0.8.1" \
       org.label-schema.environment.required="GRAPHITE_HOST, GRAPHITE_PORT" \
-      org.label-schema.environment.optional="FLUSH_INTERVAL, PERCENT_TRESHOLD, DEBUG, LOG_LEVEL" \
+      org.label-schema.environment.optional="FLUSH_INTERVAL, PERCENT_THRESHOLD, DEBUG, LOG_LEVEL" \
       org.label-schema.dockerfile="/etc/statsd/Dockerfile" \
       org.label-schema.schema-version="1.0"
